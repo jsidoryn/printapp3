@@ -1,0 +1,2 @@
+class Printer < Organisation
+end

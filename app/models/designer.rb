@@ -1,0 +1,2 @@
+class Designer < Organisation
+end
