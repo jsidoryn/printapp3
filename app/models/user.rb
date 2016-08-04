@@ -12,4 +12,9 @@ class User < ApplicationRecord
 	def client?
 		self.organisation.type == "Client"
 	end
+
+	def printer?
+		self.organisation.type == "Printer"
+	end
+
 end
