@@ -1,3 +1,6 @@
 <h1>List all jobs</h1>
-
-<%= render @jobs %>
+<% unless @jobs.nil? %>
+	<%= render @jobs %>
+<% else %>
+	<p>You seem to be a printer and functionality hasn't been added</p>
+<% end %>

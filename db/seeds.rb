@@ -9,7 +9,7 @@ printer = Printer.create(title: "Finsbury Green")
 printer.users << user3
 
 client = Client.create(title: "Katalyst")
-printer.users << user1
+client.users << user1
 
 job = Job.create!(title: "Guide Dogs annual report", description: "This is an annual report", client: client, designer: designer)
 
