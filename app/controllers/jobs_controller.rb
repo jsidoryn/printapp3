@@ -36,6 +36,6 @@ class JobsController < ApplicationController
 			flash[:notice] = "You must be a Designer to add a job"
 			redirect_to jobs_path
 		end
-		
 	end
 end
+
