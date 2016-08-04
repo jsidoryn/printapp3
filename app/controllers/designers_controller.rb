@@ -13,9 +13,17 @@ class DesignersController < ApplicationController
 		end
   end
 
+	def edit
+		@signup_designer = Designer.find(params[:id])
+	end
+
+	def update
+		
+	end
+
 	private
 
 	def signup_params
-		params.require(:signup_designer).permit(:title, :email, :password, :password_confirmation)
+		params.require(:designer).permit(:title, :email, :password, :password_confirmation)
 	end
 end
