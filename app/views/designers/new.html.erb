@@ -1,0 +1,21 @@
+<%= form_for @signup_designer, url: designers_path, method: :post do |f| %>
+	<div>
+		<%= f.label :title, 'title' %>	
+		<%= f.text_field :title %>
+	</div>
+	<div>
+		<%= f.label :email, 'email' %>	
+		<%= f.text_field :email %>
+	</div>
+	<div>
+		<%= f.label :password, 'password' %>
+		<%= f.text_field :password %>
+	</div>
+	<div>
+		<%= f.label :password_confirmation, 'password_confirmation' %>
+		<%= f.text_field :password_confirmation %>
+	</div>
+	<div>
+		<%= f.submit "submit" %>
+	</div>
+<% end %>

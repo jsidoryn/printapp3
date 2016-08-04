@@ -26,7 +26,9 @@ class JobsController < ApplicationController
 			render action: 'new'
 		end
 	end
-	
+
+	private
+
 	def job_params
 		params.require(:job).permit(:title, :client_id, :designer_id)
 	end
@@ -38,4 +40,3 @@ class JobsController < ApplicationController
 		end
 	end
 end
-
