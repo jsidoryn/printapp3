@@ -13,6 +13,7 @@
 			<ul>
 				<% if user_signed_in? %>
 					<li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
+				<li><%= link_to "Edit designer", edit_designer_path(current_user.organisation) %></li>
 					<li>Current user: <%= current_user.email %>, Type: <%= current_user.organisation.type.downcase %> | Org: <%= current_user.organisation.title %></li>
 				<% else %>
 					<li><%= link_to "Sign up", new_user_registration_path %></li>

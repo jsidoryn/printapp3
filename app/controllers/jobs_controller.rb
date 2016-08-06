@@ -3,9 +3,9 @@ class JobsController < ApplicationController
 	before_action :authenticate_designer, only: [:new, :create]
 
   def index
-		if current_user && current_user.designer?
+		if designer_access? 
 			@jobs = Job.where(designer: current_user.organisation)
-		elsif current_user && current_user.client?
+		elsif client_access? 
 			@jobs = Job.where(client: current_user.organisation)
 		else
 			@jobs = nil
