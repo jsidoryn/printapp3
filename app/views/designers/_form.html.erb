@@ -1,4 +1,4 @@
-<%= form_for @signup_designer, url: designers_path, method: :post do |f| %>
+<%= form_for @signup_designer, url: {action: "update"},  method: :patch do |f| %>
 	<% if @signup_designer.errors.any? %>
 		<div id="error_explanation">
 			<h2><%= pluralize(@signup_designer.errors.count, "error") %> prohibited this signup_designer from being saved:</h2>

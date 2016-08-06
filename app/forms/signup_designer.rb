@@ -5,9 +5,15 @@ class SignupDesigner
 
 	validates :title, :email, :password, :password_confirmation, presence: true
 
+  	# def initialize(options)
+			# @title = options[:title]  		
+			# @email = options[:email]
+  	# end
+
 	def self.model_name
 		ActiveModel::Name.new(self, nil, "Designer")
 	end
+
 	def save
 		if valid?
 			User.transaction do
@@ -17,7 +23,10 @@ class SignupDesigner
 		end
 	end
 
-	def update
-
+	def update(id)
+		# if valid?
+			@designer = Designer.find(id)
+			@designer.update!(title: @title)
+		# end
 	end
 end
