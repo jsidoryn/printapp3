@@ -33,10 +33,4 @@ class JobsController < ApplicationController
 		params.require(:job).permit(:title, :client_id, :designer_id)
 	end
 
-	def authenticate_designer
-		unless current_user.designer?
-			flash[:notice] = "You must be a Designer to add a job"
-			redirect_to jobs_path
-		end
-	end
 end
