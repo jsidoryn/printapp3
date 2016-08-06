@@ -4,4 +4,7 @@ class Job < ApplicationRecord
   belongs_to :printer
 
 	validates :title, presence: true
+
+	scope :designer_organisations, -> (organisation) { where(designer: organisation) }
+	scope :client_organisations, -> (organisation) { where(client: organisation) }
 end

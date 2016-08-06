@@ -4,9 +4,9 @@ class JobsController < ApplicationController
 
   def index
 		if designer_access? 
-			@jobs = Job.where(designer: current_user.organisation)
+			@jobs = Job.designer_organisations(current_organisation)
 		elsif client_access? 
-			@jobs = Job.where(client: current_user.organisation)
+			@jobs = Job.client_organisations(current_organisation)
 		else
 			@jobs = nil
 		end

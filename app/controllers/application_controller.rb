@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
 	def client_access?
 		current_user && current_user.client?
 	end
+
+	def current_organisation
+		current_user.organisation
+	end
 end
