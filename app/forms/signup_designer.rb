@@ -5,18 +5,13 @@ class SignupDesigner
 
 	validates :title, :email, :password, :password_confirmation, presence: true
 
-  	# def initialize(options)
-			# @title = options[:title]  		
-			# @email = options[:email]
-  	# end
-
 	def self.model_name
 		ActiveModel::Name.new(self, nil, "Designer")
 	end
 
 	def save
 		if valid?
-			User.transaction do
+			ActiveRecord::Base.transaction do
 				@designer = Designer.create(title: title)
 				@user = User.create!(email: email, password: password, password_confirmation: password_confirmation, organisation_id: @designer.id)
 			end
