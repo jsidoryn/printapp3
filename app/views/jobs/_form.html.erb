@@ -23,6 +23,10 @@
 		<%= f.collection_select :client_id, Client.all, :id, :title  %>
 	</div>
 	<div>
+		<%= f.label :status, 'Status' %>
+		<%= f.select :status, Job.statuses.map { |key, value| [key.humanize, key] }  %>
+	</div>
+	<div>
 		<%= f.submit "submit" %>
 	</div>
 <% end %>
