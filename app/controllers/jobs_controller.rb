@@ -4,9 +4,9 @@ class JobsController < ApplicationController
 
   def index
 		if designer_access? 
-			@jobs = Job.designer_organisations(current_organisation)
+			@jobs = Job.designer_organisations(current_organisation).not_closed
 		elsif client_access? 
-			@jobs = Job.client_organisations(current_organisation)
+			@jobs = Job.client_organisations(current_organisation).not_closed
 		else
 			@jobs = nil
 		end
