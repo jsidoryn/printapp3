@@ -1,7 +1,7 @@
 class DesignersController < ApplicationController
 
-	before_action :authenticate_user!
-	before_action :authenticate_designer, only: [:new, :create, :edit, :update]
+	before_action :authenticate_user!, except: [:new, :create]
+	before_action :authenticate_designer, only: [:edit, :update]
 
   def new
 		@signup_designer = SignupDesigner.new

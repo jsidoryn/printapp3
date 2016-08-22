@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 		current_user.organisation
 	end
 
-		def authenticate_designer
+	def authenticate_designer
 		unless current_user.designer?
 			flash[:notice] = "You must be a Designer to do this"
 			redirect_to jobs_path
