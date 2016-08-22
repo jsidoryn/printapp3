@@ -1,0 +1,2 @@
+module Jobs::StatusClosedHelper
+end

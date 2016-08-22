@@ -18,7 +18,7 @@ class DesignersController < ApplicationController
   end
 
 	def edit
-		@signup_designer = SignupDesigner.new(title: current_user.organisation.title, email:current_user.email)
+		@signup_designer = SignupDesigner.load(params[:id])
 	end
 
 	def update

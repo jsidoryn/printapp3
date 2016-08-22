@@ -1,30 +1,33 @@
-<% if @signup_designer.errors.any? %>
-	<div id="error_explanation">
-		<h2><%= pluralize(@signup_designer.errors.count, "error") %> prohibited this signup_designer from being saved:</h2>
+<%= form_for @signup_designer do |f| %>
 
-		<ul>
-			<% @signup_designer.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-			<% end %>
-		</ul>
+	<% if @signup_designer.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@signup_designer.errors.count, "error") %> prohibited this signup_designer from being saved:</h2>
+
+			<ul>
+				<% @signup_designer.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div>
+		<%= f.label :title, 'title' %>	
+		<%= f.text_field :title %>
+	</div>
+	<div>
+		<%= f.label :email, 'email' %>	
+		<%= f.text_field :email %>
+	</div>
+	<div>
+		<%= f.label :password, 'password' %>
+		<%= f.text_field :password %>
+	</div>
+	<div>
+		<%= f.label :password_confirmation, 'password_confirmation' %>
+		<%= f.text_field :password_confirmation %>
+	</div>
+	<div>
+		<%= f.submit "submit" %>
 	</div>
 <% end %>
-<div>
-	<%= f.label :title, 'title' %>	
-	<%= f.text_field :title %>
-</div>
-<div>
-	<%= f.label :email, 'email' %>	
-	<%= f.text_field :email %>
-</div>
-<div>
-	<%= f.label :password, 'password' %>
-	<%= f.text_field :password %>
-</div>
-<div>
-	<%= f.label :password_confirmation, 'password_confirmation' %>
-	<%= f.text_field :password_confirmation %>
-</div>
-<div>
-	<%= f.submit "submit" %>
-</div>
